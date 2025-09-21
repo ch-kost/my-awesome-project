@@ -4,42 +4,57 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>О нас</title>
-  <meta name="description" content="Узнайте больше о нашей компании">
-  <link rel="icon" href="assets/favicon.ico" type="image/x-icon">
-  <link rel="stylesheet" href="styles.css">
-  <script src="main.js" defer></script>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <header class="site-header">
-    <a class="site-header__brand" href="index.html">Логотип</a>
-    <nav class="site-nav" aria-label="Основная навигация">
-      <ul class="site-nav__list">
-        <li><a href="index.html" class="site-nav__link">Главная</a></li>
-        <li><a href="about.html" class="site-nav__link site-nav__link--active">О нас</a></li>
-        <li><a href="contacts.html" class="site-nav__link">Контакты</a></li>
+  <header class="header">
+    <a href="index.html" class="header__brand">Логотип</a>
+    <nav class="nav">
+      <ul class="nav__list">
+        <li><a href="index.html" class="nav__link">Главная</a></li>
+        <li><a href="about.html" class="nav__link">О нас</a></li>
+        <li><a href="contacts.html" class="nav__link">Связаться</a></li>
       </ul>
     </nav>
-    <button class="theme-toggle" type="button" aria-pressed="false">🌙</button>
+    <div id="themeContainer">
+      <button id="themeToggle" class="theme-toggle" type="button" aria-pressed="false" title="Переключить тему">
+        <span id="themeIcon">☀️</span>
+      </button>
+    </div>
   </header>
 
-  <main class="container">
-    <nav class="breadcrumbs" aria-label="Хлебные крошки">
-      <a href="index.html">Главная</a>
-      <span class="breadcrumbs__separator">→</span>
-      <span>О нас</span>
-    </nav>
+  <main class="main">
+    <section>
+      <h1>О нашей компании</h1>
+      <p>Мы разрабатываем современные цифровые продукты и веб-решения, помогая клиентам достигать успеха с помощью технологий.</p>
+      <p>Наши ценности: качество, инновации, надёжность и долгосрочное сотрудничество.</p>
+    </section>
 
-    <h1 class="section__title">О нашей компании</h1>
-    
-    <section class="section">
-      <h2>Наша история</h2>
-      <p>Мы создаем качественные digital-решения уже более 5 лет.</p>
-      <img src="assets/jopli.jpg" alt="Наша команда" class="responsive-image" width="600" height="400" onerror="this.style.display='none'">
+    <section class="team">
+      <h2>Наша команда</h2>
+      <div class="team__member">
+        <img src="../assets/jopli.jpg" alt="Иван Иванов">
+        <h3>Иван Иванов</h3>
+        <p>Разработчик</p>
+      </div>
+      <div class="team__member">
+        <img src="../assets/jopli.jpg" alt="Мария Петрова">
+        <h3>Мария Петрова</h3>
+        <p>Дизайнер</p>
+      </div>
+      <div class="team__member">
+        <img src="../assets/jopli.jpg" alt="Алексей Смирнов">
+        <h3>Алексей Смирнов</h3>
+        <p>Менеджер</p>
+      </div>
     </section>
   </main>
 
-  <footer class="site-footer">
-    <p>&copy; 2025 Название вашего сайта. Все права защищены.</p>
+  <footer class="footer">
+    <p>© 2025 Наш сайт. Все права защищены.</p>
   </footer>
+
+  <script src="main.js"></script>
+  <script src="theme.js"></script>
 </body>
 </html>

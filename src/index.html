@@ -3,105 +3,47 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Главная — Практика 1–4</title>
-  <meta name="description" content="Учебный проект по фронтенд разработке">
-  <link rel="icon" href="assets/favicon.ico" type="image/x-icon">
-  <link rel="stylesheet" href="styles.css">
-  <script src="main.js" defer></script>
+  <title>Главная</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <header class="site-header">
-    <a class="site-header__brand" href="index.html">Логотип</a>
-    <nav class="site-nav" aria-label="Основная навигация">
-      <ul class="site-nav__list">
-        <li><a href="index.html" class="site-nav__link site-nav__link--active">Главная</a></li>
-        <li><a href="about.html" class="site-nav__link">О нас</a></li>
-        <li><a href="contacts.html" class="site-nav__link">Контакты</a></li>
+  <header class="header">
+    <a href="index.html" class="header__brand">Логотип</a>
+    <nav class="nav">
+      <ul class="nav__list">
+        <li><a href="index.html" class="nav__link">Главная</a></li>
+        <li><a href="about.html" class="nav__link">О нас</a></li>
+        <li><a href="contacts.html" class="nav__link">Связаться</a></li>
       </ul>
     </nav>
-    <button class="theme-toggle" type="button" aria-pressed="false">🌙</button>
+    <div id="themeContainer">
+      <button id="themeToggle" class="theme-toggle" type="button" aria-pressed="false" title="Переключить тему">
+        <span id="themeIcon">☀️</span>
+      </button>
+    </div>
   </header>
 
-  <main class="container">
-    <section class="hero">
-      <h1 class="hero__title">Добро пожаловать!</h1>
-      
-      <!-- Красивая вертикальная кнопка -->
-      <button class="hero__button" id="openDialog">
-        <span class="hero__button-icon">✉️</span>
-        <span>Написать нам</span>
-      </button>
+  <main class="main">
+    <section>
+      <h1>Добро пожаловать!</h1>
+      <p>Это главная страница сайта.</p>
     </section>
 
-    <section class="section" id="services">
-      <h2 class="section__title">Наши услуги</h2>
-      <p>Мы предлагаем полный цикл разработки веб-приложений и мобильных решений.</p>
-      
-      <!-- Фото jopli.jpg -->
-      <img src="assets/jopli.jpg" alt="Наши услуги" class="portfolio-image">
-    </section>
-
-    <section class="section" id="portfolio">
-      <h2 class="section__title">Портфолио</h2>
-      <p>Посмотрите примеры наших работ в портфолио.</p>
-    </section>
-
-    <section class="section" id="video">
-      <h2 class="section__title">Видео о нас</h2>
-      
-      <!-- Видео с Rutube -->
-      <div class="media">
-        <iframe 
-          src="https://rutube.ru/play/embed/7c4dbad0b7e7d5dfd2accadba2973945" 
-          title="Пример видео с Rutube"
-          allow="autoplay; encrypted-media; picture-in-picture; web-share"
-          allowfullscreen 
-          loading="lazy">
-        </iframe>
+    <section class="video-section">
+      <h2>Жесткие Шашки на БМВ по городу в потоке</h2>
+      <p>Заряженная Бэха + поток #бмв #шашки #мка</p>
+      <div class="video-container">
+        <iframe src="https://rutube.ru/embed/798bd5a19c9e85c23d7091107dd8153b" frameborder="0" allowfullscreen></iframe>
       </div>
+      <p>Опубликовано 17 января 2025 г. | 418 просмотров | 12+</p>
     </section>
   </main>
 
-  <!-- Модалка -->
-  <dialog class="modal" id="contactDialog" aria-labelledby="dialogTitle">
-    <form class="form" id="contactForm" method="dialog" novalidate>
-      <h2 class="modal__title" id="dialogTitle">Форма обратной связи</h2>
-
-      <div class="form__group">
-        <label for="name" class="form__label">Имя:</label>
-        <input type="text" id="name" name="name" class="form__input" required minlength="2">
-        <div class="form__error">Пожалуйста, введите ваше имя</div>
-      </div>
-
-      <div class="form__group">
-        <label for="email" class="form__label">E-mail:</label>
-        <input type="email" id="email" name="email" class="form__input" required>
-        <div class="form__error">Пожалуйста, введите корректный email</div>
-      </div>
-
-      <div class="form__group">
-        <label for="phone" class="form__label">Телефон:</label>
-        <input type="tel" id="phone" name="phone" class="form__input" 
-               placeholder="+7 (900) 000-00-00" 
-               required>
-        <div class="form__error">Пожалуйста, введите номер телефона</div>
-      </div>
-
-      <div class="form__group">
-        <label for="message" class="form__label">Сообщение:</label>
-        <textarea id="message" name="message" class="form__input" rows="4" required></textarea>
-        <div class="form__error">Пожалуйста, введите сообщение</div>
-      </div>
-
-      <div class="form__actions">
-        <button type="submit" class="btn">Отправить</button>
-        <button type="button" class="btn btn--secondary" id="closeDialog">Закрыть</button>
-      </div>
-    </form>
-  </dialog>
-
-  <footer class="site-footer">
-    <p>&copy; 2025 Учебный проект. Все права защищены.</p>
+  <footer class="footer">
+    <p>© 2025. Все права защищены.</p>
   </footer>
+
+  <script src="main.js"></script>
+  <script src="theme.js"></script>
 </body>
 </html>
