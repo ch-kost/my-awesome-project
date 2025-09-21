@@ -1,35 +1,53 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-    ... <!-- Скопируйте весь блок <head> из index.html -->
-    <title>О нас - Название вашего сайта</title>
-    <meta name="description" content="Узнайте больше о нашей компании и истории">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Контакты</title>
+  <meta name="description" content="Свяжитесь с нами">
+  <link rel="icon" href="assets/favicon.ico" type="image/x-icon">
+  <link rel="stylesheet" href="styles.css">
+  <script src="main.js" defer></script>
 </head>
 <body>
-    <header>
-        ... <!-- Скопируйте весь блок <hea der> из index.html -->
-    </header>
+  <header class="site-header">
+    <a class="site-header__brand" href="index.html">Логотип</a>
+    <nav class="site-nav" aria-label="Основная навигация">
+      <ul class="site-nav__list">
+        <li><a href="index.html" class="site-nav__link">Главная</a></li>
+        <li><a href="about.html" class="site-nav__link">О нас</a></li>
+        <li><a href="contacts.html" class="site-nav__link site-nav__link--active">Контакты</a></li>
+      </ul>
+    </nav>
+    <button class="theme-toggle" type="button" aria-pressed="false">🌙</button>
+  </header>
 
-    <main>
-        <!-- Простые "хлебные крошки" -->
-        <nav aria-label="Хлебные крошки">
-            <a href="index.html">Главная</a> →
-            <span>О нас</span>
-        </nav>
+  <main class="container">
+    <nav class="breadcrumbs" aria-label="Хлебные крошки">
+      <a href="index.html">Главная</a>
+      <span class="breadcrumbs__separator">→</span>
+      <span>Контакты</span>
+    </nav>
 
-        <h1>О нашей компании</h1>
-        <section>
-            <h2>Наша история</h2>
-            <p>Текст о том, как все начиналось...</p>
-        </section>
-        <section>
-            <h2>Наша команда</h2>
-            <p>Текст о команде...</p>
-        </section>
-    </main>
+    <h1 class="section__title">Контакты</h1>
 
-    <footer>
-        ... <!-- Скопируйте весь блок <footer> из index.html -->
-    </footer>
+    <div class="section">
+      <p>Телефон: +7 (123) 456-78-90</p>
+      <p>Email: info@example.com</p>
+      <p>Адрес: г. Москва, ул. Примерная, д. 123</p>
+    </div>
+
+    <section class="section">
+      <h2>Свяжитесь с нами</h2>
+      <button class="hero__button" id="openDialog">
+        <span class="hero__button-icon">✉️</span>
+        <span>Написать нам</span>
+      </button>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p>&copy; 2025 Название вашего сайта. Все права защищены.</p>
+  </footer>
 </body>
 </html>

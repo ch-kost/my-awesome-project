@@ -1,56 +1,107 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Главная - Название вашего сайта</title>
-    <meta name="description" content="Краткое описание главной страницы вашего сайта">
-    <link rel="icon" href="../assets/favicon.ico" type="image/x-icon">
-    <link rel="styleshhet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Главная — Практика 1–4</title>
+  <meta name="description" content="Учебный проект по фронтенд разработке">
+  <link rel="icon" href="assets/favicon.ico" type="image/x-icon">
+  <link rel="stylesheet" href="styles.css">
+  <script src="main.js" defer></script>
 </head>
 <body>
-    <!-- Шапка сайта -->
-    <header>
-        <a href="/">Логотип или название сайта</a>
-        <!-- Главное меню навигации -->
-        <nav>
-            <ul>
-                <li><a href="index.html">Главная</a></li>
-                <li><a href="about.html">О нас</a></li>
-                <li><a href="contacts.html">Контакты</a></li>
-            </ul>
-        </nav>
-    </header>
+  <header class="site-header">
+    <a class="site-header__brand" href="index.html">Логотип</a>
+    <nav class="site-nav" aria-label="Основная навигация">
+      <ul class="site-nav__list">
+        <li><a href="index.html" class="site-nav__link site-nav__link--active">Главная</a></li>
+        <li><a href="about.html" class="site-nav__link">О нас</a></li>
+        <li><a href="contacts.html" class="site-nav__link">Контакты</a></li>
+      </ul>
+    </nav>
+    <button class="theme-toggle" type="button" aria-pressed="false">🌙</button>
+  </header>
 
-    <!-- Уникальное основное содержимое страницы -->
-    <main>
-        <h1>Добро пожаловать на наш сайт!</h1>
+  <main class="container">
+    <section class="hero">
+      <h1 class="hero__title">Добро пожаловать!</h1>
+      
+      <!-- Красивая вертикальная кнопка -->
+      <button class="hero__button" id="openDialog">
+        <span class="hero__button-icon">✉️</span>
+        <span>Написать нам</span>
+      </button>
+    </section>
 
-        <!-- Секция 1 с якорем -->
-        <section id="services">
-            <h2>Наши услуги</h2>
-            <p>Описание предоставляемых услуг...</p>
-            <a href="#contacts">Связаться с нами</a> <!-- Якорная ссылка внутри страницы -->
-        </section>
+    <section class="section" id="services">
+      <h2 class="section__title">Наши услуги</h2>
+      <p>Мы предлагаем полный цикл разработки веб-приложений и мобильных решений.</p>
+      
+      <!-- Фото jopli.jpg -->
+      <img src="assets/jopli.jpg" alt="Наши услуги" class="portfolio-image">
+    </section>
 
-        <!-- Секция 2 с якорем -->
-        <section id="portfolio">
-            <h2>Портфолио</h2>
-            <p>Примеры наших работ...</p>
-        </section>
+    <section class="section" id="portfolio">
+      <h2 class="section__title">Портфолио</h2>
+      <p>Посмотрите примеры наших работ в портфолио.</p>
+    </section>
 
-        <!-- Секция 3 с якорем -->
-        <section id="contacts">
-            <h2>Контактная информация</h2>
-            <p>Наши контакты...</p>
-            <a href="contacts.html">Подробнее</a> <!-- Ссылка на отдельную страницу -->
-        </section>
-    </main>
+    <section class="section" id="video">
+      <h2 class="section__title">Видео о нас</h2>
+      
+      <!-- Видео с Rutube -->
+      <div class="media">
+        <iframe 
+          src="https://rutube.ru/play/embed/7c4dbad0b7e7d5dfd2accadba2973945" 
+          title="Пример видео с Rutube"
+          allow="autoplay; encrypted-media; picture-in-picture; web-share"
+          allowfullscreen 
+          loading="lazy">
+        </iframe>
+      </div>
+    </section>
+  </main>
 
-    <!-- Подвал сайта -->
-    <footer>
-        <p>&copy; 2023 Название вашего сайта. Все права защищены.</p>
-        <p>Телефон: +7 (123) 456-78-90</p>
-    </footer>
+  <!-- Модалка -->
+  <dialog class="modal" id="contactDialog" aria-labelledby="dialogTitle">
+    <form class="form" id="contactForm" method="dialog" novalidate>
+      <h2 class="modal__title" id="dialogTitle">Форма обратной связи</h2>
+
+      <div class="form__group">
+        <label for="name" class="form__label">Имя:</label>
+        <input type="text" id="name" name="name" class="form__input" required minlength="2">
+        <div class="form__error">Пожалуйста, введите ваше имя</div>
+      </div>
+
+      <div class="form__group">
+        <label for="email" class="form__label">E-mail:</label>
+        <input type="email" id="email" name="email" class="form__input" required>
+        <div class="form__error">Пожалуйста, введите корректный email</div>
+      </div>
+
+      <div class="form__group">
+        <label for="phone" class="form__label">Телефон:</label>
+        <input type="tel" id="phone" name="phone" class="form__input" 
+               placeholder="+7 (900) 000-00-00" 
+               required>
+        <div class="form__error">Пожалуйста, введите номер телефона</div>
+      </div>
+
+      <div class="form__group">
+        <label for="message" class="form__label">Сообщение:</label>
+        <textarea id="message" name="message" class="form__input" rows="4" required></textarea>
+        <div class="form__error">Пожалуйста, введите сообщение</div>
+      </div>
+
+      <div class="form__actions">
+        <button type="submit" class="btn">Отправить</button>
+        <button type="button" class="btn btn--secondary" id="closeDialog">Закрыть</button>
+      </div>
+    </form>
+  </dialog>
+
+  <footer class="site-footer">
+    <p>&copy; 2025 Учебный проект. Все права защищены.</p>
+  </footer>
 </body>
 </html>
