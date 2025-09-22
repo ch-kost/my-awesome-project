@@ -232,3 +232,13 @@ body {
     min-width: 250px;
   }
 }
+/* Подсветка активной страницы в навигации */
+.nav__link.active {
+    font-weight: bold;
+    color: var(--primary);
+    text-decoration: underline;
+}
+
+.nav__link.active:hover {
+    text-decoration: underline;
+}

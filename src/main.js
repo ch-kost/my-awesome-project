@@ -1,7 +1,9 @@
 // Инициализация модального окна и валидации формы
+// Инициализация модального окна и валидации формы
 document.addEventListener('DOMContentLoaded', function() {
     initModal();
     initImageFallback();
+    highlightActivePage(); // Добавьте эту строку
 });
 
 // Модальное окно с улучшенной валидацией
@@ -159,4 +161,27 @@ function replaceWithFallback(img) {
     img.alt = 'Изображение не загружено';
     img.style.border = '2px dashed #ccc';
     img.onerror = null;
+}
+// Подсветка активной страницы в навигации
+function highlightActivePage() {
+    const currentPage = window.location.pathname.split('/').pop() || 'index.html';
+    const navLinks = document.querySelectorAll('.nav__link');
+    
+    navLinks.forEach(link => {
+        const linkPage = link.getAttribute('href');
+        // Удаляем класс active у всех ссылок
+        link.classList.remove('active');
+        
+        // Добавляем класс active текущей странице
+        if (linkPage === currentPage) {
+            link.classList.add('active');
+        }
+        
+        // Для главной страницы (index.html)
+        if (currentPage === '' || currentPage === 'index.html') {
+            if (linkPage === 'index.html') {
+                link.classList.add('active');
+            }
+        }
+    });
 }
